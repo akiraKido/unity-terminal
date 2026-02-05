@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace UnityTerminal
+namespace UnityTerminal.Editor
 {
     public sealed class TerminalView : VisualElement
     {
