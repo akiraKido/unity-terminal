@@ -1,5 +1,4 @@
 using UnityEditor;
-using UnityEngine;
 
 namespace UnityTerminal.Editor
 {
@@ -10,7 +9,7 @@ namespace UnityTerminal.Editor
         {
             EditorUtility.DisplayDialog(
                 "Unity Terminal",
-                "Unity Terminal editor extension is initialized.",
+                "Unity Terminal editor extension is initialized. Open Tools > Unity Terminal > Open Terminal to launch the PTY view.",
                 "OK"
             );
         }
