@@ -1,0 +1,17 @@
+name: macOS Native Build (PR)
+
+on:
+  pull_request:
+
+jobs:
+  build-macos-native:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build macOS PTY bridge
+        run: |
+          chmod +x Native/macOS/build.sh
+          Native/macOS/build.sh

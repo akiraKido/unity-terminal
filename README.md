@@ -6,8 +6,7 @@ Unity エディタ内で macOS PTY を使ったターミナル表示を行う MV
 
 - `Native/macOS/pty_bridge.c`: PTY + `/bin/zsh -l` 起動ブリッジ
 - `Native/macOS/build.sh`: `libpty_bridge.dylib` ビルドスクリプト
-- `Runtime/*`: PTY セッション、ANSI 最小パーサ、スクリーンバッファ、UIElements TerminalView
-- `Editor/TerminalWindow.cs`: `Tools > Unity Terminal > Open Terminal` の EditorWindow
+- `Editor/*`: PTY セッション、ANSI 最小パーサ、スクリーンバッファ、UIElements TerminalView、EditorWindow
 
 ## セットアップ（macOS）
 

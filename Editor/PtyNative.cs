@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace UnityTerminal
+namespace UnityTerminal.Editor
 {
     internal static class PtyNative
     {

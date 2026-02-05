@@ -1,9 +1,7 @@
 {
   "name": "UnityTerminal.Editor",
   "rootNamespace": "UnityTerminal.Editor",
-  "references": [
-    "UnityTerminal.Runtime"
-  ],
+  "references": [],
   "includePlatforms": [
     "Editor"
   ],

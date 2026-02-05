@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using System.Text;
 using System.Threading;
 
-namespace UnityTerminal
+namespace UnityTerminal.Editor
 {
     public sealed class PtySession : IDisposable
     {
