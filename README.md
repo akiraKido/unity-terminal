@@ -5,14 +5,24 @@ Unity エディタ内で macOS PTY を使ったターミナル表示を行う MV
 ## 追加された構成
 
 - `Native/macOS/pty_bridge.c`: PTY + `/bin/zsh -l` 起動ブリッジ
-- `Native/macOS/build.sh`: `libpty_bridge.dylib` ビルドスクリプト
+- `Native/macOS/build.sh`: `Plugins/macOS/libpty_bridge.dylib` をユニバーサル（arm64 + x86_64）でビルドするスクリプト
+- `.github/workflows/macos-native-build-pr.yml`: PR 作成時に macOS 向けネイティブライブラリをビルドし、PR ブランチへ自動反映
 - `Editor/*`: PTY セッション、ANSI 最小パーサ、スクリーンバッファ、UIElements TerminalView、EditorWindow
 
 ## セットアップ（macOS）
 
-1. `Native/macOS/build.sh` を実行して `Plugins/macOS/libpty_bridge.dylib` を生成
-2. Unity でパッケージを読み込む
-3. `Tools > Unity Terminal > Open Terminal` を開く
+1. Unity でパッケージを読み込む
+2. `Tools > Unity Terminal > Open Terminal` を開く
+
+> `Plugins/macOS/libpty_bridge.dylib` は GitHub Actions でビルドして PR に含める運用です。
+> 通常は手元で追加ビルド不要で、そのままインポートして利用できます。
+
+## ローカルで再ビルドしたい場合
+
+```bash
+chmod +x Native/macOS/build.sh
+Native/macOS/build.sh
+```
 
 ## 現在の対応範囲
 
