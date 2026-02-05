@@ -2,6 +2,10 @@ name: macOS Native Build (PR)
 
 on:
   pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build-macos-native:
@@ -10,8 +14,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Build macOS PTY bridge
         run: |
           chmod +x Native/macOS/build.sh
           Native/macOS/build.sh
+
+      - name: Verify binary architecture
+        run: |
+          lipo -archs Plugins/macOS/libpty_bridge.dylib
+
+      - name: Commit built binary to PR branch
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: update macOS native PTY bridge binary'
+          file_pattern: Plugins/macOS/libpty_bridge.dylib
+          branch: ${{ github.event.pull_request.head.ref }}
