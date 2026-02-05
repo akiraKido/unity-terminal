@@ -1,12 +1,8 @@
 {
-  "name": "UnityTerminal.Editor",
-  "rootNamespace": "UnityTerminal.Editor",
-  "references": [
-    "UnityTerminal.Runtime"
-  ],
-  "includePlatforms": [
-    "Editor"
-  ],
+  "name": "UnityTerminal.Runtime",
+  "rootNamespace": "UnityTerminal",
+  "references": [],
+  "includePlatforms": [],
   "excludePlatforms": [],
   "allowUnsafeCode": false,
   "overrideReferences": false,
